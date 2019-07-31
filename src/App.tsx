@@ -1,5 +1,5 @@
 import React, { Fragment, Suspense, lazy } from 'react';
-import { HashRouter as Router, Route, Redirect, Switch } from 'react-router-dom'
+import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 import Menu from './components/Menu'
 import './App.less';
 
@@ -11,7 +11,7 @@ const Message = lazy(() => import('./pages/Message'))
 const About = lazy(() => import('./pages/About'))
 const Example = lazy(() => import('./pages/Example'))
 
-const view = (props: any) => (
+const View = (props: any) => (
   <Fragment>
     <Menu />
     {props.children}
@@ -20,7 +20,7 @@ const view = (props: any) => (
 
 const App = () => (
   <Router>
-    <Route path='/' component={view} />
+    <Route path='/' component={View} />
     <Switch>
       <Suspense fallback={<div>loading....</div>}>
         <Route path="/home" component={Home} />
@@ -32,7 +32,6 @@ const App = () => (
         <Route path="/example" component={Example} />
       </Suspense>
     </Switch>
-    <Redirect from='/' to='home' />
   </Router>
 )
 export default App;

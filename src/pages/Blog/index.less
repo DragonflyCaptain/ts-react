@@ -1,4 +1,53 @@
-.blog-warper{
-    width: 100%;
-    height: 100%;
+body {
+    background: #33b15d;
+
+    .blog-warper {
+        width: 100%;
+        height: 100%;
+        background: #33b15d;
+
+        .blogList {
+            .blog-item {
+                width: 40%;
+                height: 200px;
+                background: #fff;
+                border: 1px solid #e6e6e6;
+                margin: 10px auto;
+                border-radius: 5px;
+                display: flex;
+                cursor: pointer;
+
+                .blog-img {
+                    flex: 1;
+                    height: 150px;
+                    margin-left: 30px;
+                    margin-top: 25px;
+                    border: 1px solid #e6e6e6;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                .blog-content {
+                    flex: 3;
+                    height: 150px;
+                    margin: 30px 20px 20px 20px;
+
+                    span {
+                        font-size: 20px;
+                        font-weight: 400;
+                    }
+                    div{
+                        width: 100%;
+                        height: 100%;
+                        overflow: hidden;
+                        white-space: wrap;
+                        text-overflow:ellipsis;
+                    }
+                }
+            }
+        }
+    }
 }
